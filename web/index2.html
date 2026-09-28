@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noticias</title>
+
+    <!-- Librería jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div.noticia {
+            width: 28%;
+            margin: 20px 1%;
+            float: left;
+            border: 2px solid #f00;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #controles {
+            text-align: right;
+            margin: 10px 20px;
+        }
+
+        /* Estilos del modo lectura */
+        body.modo-lectura {
+            background-color: #222;
+            color: white;
+        }
+
+        body.modo-lectura .noticia {
+            background-color: #333;
+            border-color: white;
+        }
+
+        body.modo-lectura .noticia p {
+            font-size: 20px;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        body.modo-lectura button {
+            padding: 8px;
+        }
+
+        @media (max-width: 800px) {
+            div.noticia {
+                width: 96%;
+                margin: 2%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>NOTICIAS</h1>
+
+    <div id="controles">
+        <button id="modoLectura">Activar modo lectura</button>
+    </div>
+
+    <!-- NOTICIA 1 -->
+    <div class="noticia" id="noticia1">
+
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+            sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Aumentar"
+                        class="aumentar" data-noticia="noticia1">
+                </td>
+
+                <td style="text-align:right">
+                    <input type="button" value="Disminuir"
+                        class="disminuir" data-noticia="noticia1">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- NOTICIA 2 -->
+    <div class="noticia" id="noticia2">
+
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+            sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Aumentar"
+                        class="aumentar" data-noticia="noticia2">
+                </td>
+
+                <td style="text-align:right">
+                    <input type="button" value="Disminuir"
+                        class="disminuir" data-noticia="noticia2">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- NOTICIA 3 -->
+    <div class="noticia" id="noticia3">
+
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+            sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Aumentar"
+                        class="aumentar" data-noticia="noticia3">
+                </td>
+
+                <td style="text-align:right">
+                    <input type="button" value="Disminuir"
+                        class="disminuir" data-noticia="noticia3">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function() {
+
+            // Seleccionamos todos los botones de aumentar
+            $(".aumentar").click(function() {
+
+                var noticia = $(this).data("noticia");
+
+                var texto = $("#" + noticia + " p");
+
+                var tamano = parseFloat(texto.css("font-size"));
+
+                texto.css("font-size", (tamano * 1.05) + "px");
+
+            });
+
+
+            // Seleccionamos todos los botones de disminuir
+            $(".disminuir").click(function() {
+
+                var noticia = $(this).data("noticia");
+
+                var texto = $("#" + noticia + " p");
+
+                var tamano = parseFloat(texto.css("font-size"));
+
+                if (tamano > 8) {
+                    texto.css("font-size", (tamano - 1) + "px");
+                }
+
+            });
+
+
+            // Activar y desactivar el modo lectura
+            $("#modoLectura").click(function() {
+
+                $("body").toggleClass("modo-lectura");
+
+                if ($("body").hasClass("modo-lectura")) {
+
+                    $(this).text("Desactivar modo lectura");
+
+                } else {
+
+                    $(this).text("Activar modo lectura");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
