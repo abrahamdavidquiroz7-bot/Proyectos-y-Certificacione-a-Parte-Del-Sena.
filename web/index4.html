@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Página Web</title>
+        <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+
+    
+
+<div class="container">
+    
+    <div class="clock">
+
+            <div id="date">Monday 26 september 2023</div>
+
+
+            
+            <ul>
+                
+                
+                <li id="hours">05</li>
+                    
+
+                
+                <li id="point">:</li>
+
+
+                        
+                        <li id="min">20</li>
+
+
+                          
+                        <li id="point">:</li>
+
+
+
+
+                          
+                        <li id="sec">30</li>
+
+
+
+                        
+            </ul>
+
+                    </div>
+                 
+
+</div>
+
+
+
+
+<script>
+function clock() {
+    var today = new Date();
+
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+
+    document.getElementById("hours").innerHTML = h;
+    document.getElementById("min").innerHTML = m;
+    document.getElementById("sec").innerHTML = s;
+
+    var days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+    var day = days[today.getDay()];
+    var date = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+
+    document.getElementById("date").innerHTML =
+        day + " " + date + "/" + month + "/" + year;
+}
+
+setInterval(clock, 1000);
+
+clock();
+</script>
+</body>
+</html>
+
+
+
