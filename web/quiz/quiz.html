@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style8.css">
+
+</head>
+
+<body>
+
+    <div id="quiz">
+<div id="pregunta">
+
+    <h1>Pregunta 1</h1>
+    <p>CUAL ES EL IDIOMA DE PROGRAMACION MAS CONOCIDO </p>
+    <div id="respuestas">
+
+        <button id="respuestacorrecta">PHYTON</button>
+        <button id="html">HTML</button>
+         <button id="css">CSS</button>
+          <button id="java">JAVA</button>
+    
+
+    </div>
+</div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+     <div id="quiz1">
+<div id="pregunta">
+
+    <h1>Pregunta 2</h1>
+    <p>QUE LENGUAJE DE ETIQUETA SE UTILIZA PARA PAGINAS WEB</p>
+    <div id="respuestas">
+
+        <button id="respuestacorrecta1">HTML Y CSS</button>
+        <button id="REACT">REACT</button>
+         <button id="KOTLIN">KOTLIN</button>
+       
+        
+    </div>
+</div>
+
+
+
+    </div>
+
+
+
+<script>
+
+
+respuestacorrecta=document.getElementById("respuestacorrecta")
+
+
+respuestacorrecta.addEventListener("click",function(){
+    
+    if(respuestacorrecta.textContent=="PHYTON"){
+    respuestacorrecta.style.backgroundColor = "green";
+    quiz.style.display="none"
+    quiz1.style.display="block"
+}
+});
+html=document.getElementById("html")
+css=document.getElementById("css")
+java=document.getElementById("java")
+
+ html.addEventListener("click",function(){
+    if(html.textContent!="PHYTON"){
+    html.style.backgroundColor = "red";
+   
+}
+});
+
+
+ css.addEventListener("click",function(){
+    if(html.textContent!="PHYTON"){
+    css.style.backgroundColor = "red";
+   
+}
+});
+
+
+ java.addEventListener("click",function(){
+    if(html.textContent!="PHYTON"){
+    java.style.backgroundColor = "red";
+   
+}
+});
+
+respuestacorrecta1=document.getElementById("respuestacorrecta1")
+react=document.getElementById("REACT")
+kotlin=document.getElementById("KOTLIN")
+
+
+respuestacorrecta1.addEventListener("click",function(){
+    if(respuestacorrecta1.textContent=="HTML Y CSS")
+respuestacorrecta1.style.backgroundColor="green"
+
+});
+
+
+react.addEventListener("click",function(){
+    if(react.textContent!="HTML Y CSS")
+    react.style.backgroundColor="red"
+
+});
+
+
+kotlin.addEventListener("click",function(){
+    if(kotlin.textContent!="HTML Y CSS")
+    kotlin.style.backgroundColor="red"
+
+});
+
+    </script>
+
+</body>
+</html>
