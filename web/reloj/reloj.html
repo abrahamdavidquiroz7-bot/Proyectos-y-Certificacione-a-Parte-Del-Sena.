@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles5.css">
+    <title>Document</title>
+</head>
+<body>
+// mi reloj digital
+<div class="container">
+
+
+    
+<div class="clock">
+
+
+    
+    <div id="date">Monday 26 September</div>
+
+
+    
+    <ul>
+        
+        
+        <li id="hours">05</li>
+   <li id="point">:</li>
+   <li id="min">49</li>
+   <li id="point">:</li>
+   <li id="sec">16</li>
+
+
+
+
+    </ul>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</body>
+<script>
+
+
+
+    
+    function clock(){
+
+
+        var today=new Date()
+
+
+
+
+
+        var h = today.getHours()
+
+            var min= today.getMinutes()
+
+
+                var s = today.getSeconds()
+
+
+                document.getElementById("hours").innerHTML=h;
+                   document.getElementById("min").innerHTML=min;
+                      document.getElementById("sec").innerHTML=s;
+
+
+
+                      var days=["lunes","martes","miercoles","jueves","viernes","sabado"]
+
+
+                      var day=days[today.getDay()]
+
+
+                        var date= today.getDate()
+
+            var momnth= today.getMonth()
+
+
+                var year=today.getFullYear()
+
+
+                document.getElementById("date").innerHTML=    day + " " + date + "/" + month + "/" + year;
+
+    }
+
+
+    setInterval(clock,1000)
+
+
+
+
+
+</script>
+
+
+</html>

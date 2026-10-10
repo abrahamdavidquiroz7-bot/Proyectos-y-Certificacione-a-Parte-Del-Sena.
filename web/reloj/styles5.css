@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock ul{
+
+    display: flex;
+    list-style: none;
+    font-size: 90px;
+    font-family: Arial, Helvetica, sans-serif;
+    gap:15px;
+}
+
+
+.clock{
+    padding:40px;
+    border-radius: 10px solid grey;
+    background-color: #222222;
+
+color:white;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#date{
+    font-size: 20px;
+    text-align: center;
+}
