@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+        .barra{
+
+            width:350px;
+            border-radius: 10px;
+            height: 15px;
+            background-color: lightgrey;
+
+        }
+
+        #progreso{
+            transition: width 0.3 ease;
+            background-color: green;
+            border-radius: 10px;
+            width:0px;
+            height: 100%;
+        }
+
+
+      
+
+    .cuadritos{
+            margin-left: 5px;
+            width: auto;
+            height: 14px;
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="barra" >
+    <div id="progreso">
+
+        
+
+    
+   </div>
+    </div>
+
+   <div class="cuadros">
+<button type="checkbox" class="cuadritos"></button>
+<button type="checkbox" class="cuadritos"></button>
+<button type="checkbox" class="cuadritos"></button>
+<button type="checkbox" class="cuadritos"></button>
+
+
+   </div>
+
+   <script>
+
+
+let cuadritoss=document.querySelectorAll(".cuadritos")
+
+let progresoo=document.getElementById("progreso")
+
+let completadas=0
+cuadritoss.forEach(function(cuadritos){
+    cuadritos.addEventListener("click", function(){
+        if(cuadritos.textContent===""){
+            cuadritos.textContent="✓ "
+            completadas++
+            progresoo.style.width=(completadas/4)*100 +"%"
+        }
+        else{
+            cuadritos.textContent=""
+            completadas--
+                  progresoo.style.width=(completadas/4)*100 +"%"
+        }
+
+
+    });
+    
+});
+
+    cuadritos.forEach(function() {
+        if(cuadritos.textContent="✓ "){
+            progresoo.classList.add("progreso")
+
+        }
+        else{
+             progresoo.classList.remove("progreso")
+        }
+
+        
+    });
+
+ 
+
+   </script>
+</body>
+</html>
