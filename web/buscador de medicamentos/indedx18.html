@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.contenedor{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productos{
+    display: flex;
+    width:400px;
+    height: 400px;
+    margin-left: 15px;
+    background-color:black;
+    position: relative;
+    border-radius: 20px;
+
+
+
+
+
+}
+
+
+.productos img{
+    width:150px;
+    height: auto;
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+top:40%;
+left:30%;
+
+}
+
+p{
+    position: absolute;
+    color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#input{
+    background-color: bisque;
+    border-radius: 5px;
+    border-radius: 14px;
+}
+    </style>
+</head>
+<body>
+<input type="text" id="input" >
+<div class="contenedor">
+    <div class="productos">
+<img src="https://img.magnific.com/vector-gratis/composicion-medicamentos-cuidado-salud-imagenes-pildoras-ampollas-frascos-capsulas-gotas-jarabes-ilustracion-vectorial_1284-71689.jpg?semt=ais_hybrid&w=740&q=80">
+<p>ACETAMINOFEN</p>
+    </div>
+   <div class="productos">
+<img src="https://img.magnific.com/vector-gratis/composicion-medicamentos-cuidado-salud-imagenes-pildoras-ampollas-frascos-capsulas-gotas-jarabes-ilustracion-vectorial_1284-71689.jpg?semt=ais_hybrid&w=740&q=80">
+<p>LORATADINA</p>
+ </div>
+
+   <div class="productos">
+<img src="https://img.magnific.com/vector-gratis/composicion-medicamentos-cuidado-salud-imagenes-pildoras-ampollas-frascos-capsulas-gotas-jarabes-ilustracion-vectorial_1284-71689.jpg?semt=ais_hybrid&w=740&q=80">
+<p>ALCOHOL</p>
+
+
+ <div class="productos">
+<img src="https://img.magnific.com/vector-gratis/composicion-medicamentos-cuidado-salud-imagenes-pildoras-ampollas-frascos-capsulas-gotas-jarabes-ilustracion-vectorial_1284-71689.jpg?semt=ais_hybrid&w=740&q=80">
+<p>CLOROFERAMINA</p>
+
+
+
+
+
+</div>
+
+<script>
+
+
+let input = document.getElementById("input");
+let productos = document.querySelectorAll(".productos");
+
+let container = document.getElementById("container");
+
+input.addEventListener("input", function() {
+
+    productos.forEach(producto => {
+
+        if (producto.textContent.toLowerCase().includes(input.value.toLowerCase())) {
+
+            producto.style.display = "block";
+
+        } else {
+
+            producto.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+
+</script>
+
+</body>
+</html>
