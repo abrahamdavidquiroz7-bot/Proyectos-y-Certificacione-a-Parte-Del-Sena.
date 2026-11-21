@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario Express</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Inventario Express</h1>
+
+        <div id="productos"></div>
+
+        <h3>Productos disponibles: <span id="disponibles">0</span></h3>
+
+        <h3>Valor del inventario: $<span id="total">0</span></h3>
+    </main>
+
+    <script>
+        const productos = [
+            { nombre: "Arroz", precio: 3500, stock: 10 },
+            { nombre: "Leche", precio: 4200, stock: 5 },
+            { nombre: "Pan", precio: 2000, stock: 0 },
+            { nombre: "Huevos", precio: 15000, stock: 8 }
+        ];
+
+        // Mostrar productos
+        let contenedor = document.getElementById("productos");
+
+        productos.forEach(function(producto) {
+            contenedor.innerHTML += `
+                <div class="producto">
+                    <h3>${producto.nombre}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <p>Stock: ${producto.stock}</p>
+                </div>
+            `;
+        });
+
+        // Productos disponibles
+        let disponiblo = document.getElementById("disponibles");
+
+        let disponibles = productos.filter(function(producto) {
+            return producto.stock > 0;
+        });
+
+        disponiblo.textContent = disponibles.length;
+
+        // Valor total del inventario
+        let total = document.getElementById("total");
+
+        let suma = productos.reduce(function(acumulador, producto) {
+            return acumulador + (producto.precio * producto.stock);
+        }, 0);
+
+        total.textContent = suma.toLocaleString("es-CO");
+
+    </script>
+
+</body>
+</html>
