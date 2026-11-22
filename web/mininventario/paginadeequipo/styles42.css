@@ -1,0 +1,142 @@
+.barra{
+    background-color:
+#6CABDD;
+height: 90px;
+width:100vw;
+top:0;
+left:0;
+position: fixed;
+z-index: 1000;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:120px;
+    height: 90px;
+    object-fit: contain;
+    left:50%;
+    transform: translatex(-50%);
+    position: absolute;
+}
+
+.mover{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding:5px 30px;
+    gap:25px;
+    position: relative;
+
+}
+
+.iconos{
+      flex-shrink: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   display: flex;
+    font-size: 23px;
+    gap:60px;
+
+}
+
+.iconos a{
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.enlaces {
+      flex-shrink: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap:70px;
+       display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    
+}
+.enlaces a{
+color:black;
+    text-decoration: none;
+
+}
+
+body{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+
+
+
+.hero-section {
+    width: 100%;
+    height: 75vh;
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img2 {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fondo-oscuro {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.05)
+    );
+}
+
+.mensaje {
+    position: absolute;
+    bottom: 55px;
+    left: 65px;
+    z-index: 5;
+    max-width: 750px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.categoria {
+    color: #6CABDD;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.mensaje h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 15px 0;
+}
+
+.mensaje p {
+    font-size: 17px;
+    color: #ddd;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 25px;
+    background-color: #6CABDD;
+    color: #10213b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: white;
+}
